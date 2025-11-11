@@ -23,7 +23,7 @@ export const Lema = () => {
                 initial={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="list-disc list-inside mt-6 text-base/7 text-gray-700 lg:text-lg xl:text-xl"
+                className="list-disc list-inside mt-6 text-base/7 text-gray-700 lg:text-lg xl:text-xl text-justify"
             >
                 <li className="mt-4 text-base/7 text-gray-700 lg:text-lg xl:text-xl">
                     El primero y más evidente, el cambio de las tonalidades de los colores. Las personas al pasar por el encuentro con <b>Jesús</b> descubren con nitidez la belleza y el esplendor de sus vidas.

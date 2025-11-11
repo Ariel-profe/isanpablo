@@ -12,13 +12,13 @@ const SportPage = () => {
       <BlurTitle word='Escuela Deportiva' />
         <div className='mt-10'>
           <CarouselPage images={deportiva.images} />
-          <p className='text-xl md:text-2xl text-primary-dark-gray mt-12 text-justify'>{deportiva.description}</p>
+          <p className='text-lg text-primary-dark-gray mt-12 text-justify'>{deportiva.description}</p>
 
           <h3 className='mt-5 text-xl md:text-2xl text-primary-blue mb-3 uppercase'>Las opciones abarcan las siguientes disciplinas:</h3>
           
           <ul className='ml-10 mb-4'>
             {deportiva.sports?.map(sport => (
-              <li className='text-slate-900 md:text-xl list-disc my-1' key={sport}>{sport}</li>
+              <li className='text-slate-900 md:text-lg list-disc my-1' key={sport}>{sport}</li>
             ))}
           </ul>
             

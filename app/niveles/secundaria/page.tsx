@@ -1,5 +1,4 @@
 
-import { Button } from '@/components/ui/button';
 import { BlurTitle } from '@/components/ui/blur-title';
 import { CarouselPage } from '@/components/ui/carousel-page';
 import { levels } from '@/lib/utils';
@@ -50,14 +49,6 @@ const SecundariaPage = () => {
           <p className='text-lg text-primary-dark-gray my-5'>Para una mejor organización y atención de calidad en las consultas, tanto de docentes como de directivos, se recomienda a los padres solicitar con anticipación sus entrevistas y esperar la confirmación de la misma.</p>
           <p className='text-xl text-primary-dark-gray my-5 italic'>Los horarios de consultas se deben ver con docentes de aula y especiales.</p>
           <span className='text-lg text-primary-red'>En caso de URGENCIAS consultar a dirección.</span>
-        </div>
-
-        <div className="group my-12 text-center md:hover:opacity-75 ">
-          <Button variant="link">
-            <a href='https://www.facebook.com/profile.php?id=100064060183662' target='_blank'>
-              En este link podrás ver actividades relacionadas
-            </a>
-          </Button>
         </div>
       </div>
     </section>

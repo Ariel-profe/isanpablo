@@ -5,14 +5,16 @@ export const EstudiarMejor = () => {
             <h3 className='text-2xl md:text-3xl text-primary-blue uppercase underline'>A organizarse</h3>
 
 
-            <div className='mt-5 flex flex-col lg:flex-row items-start justify-between'>
-                <div className='text-lg text-primary-dark-gray'>
-                    <p>
-                        Al momento de estudiar es necesario saber que cada uno de nosotros tiene diferentes modos de aprender, por lo tanto es importante que podamos conocernos a nosotros mismos y ver si las herramientas que utilizamos nos sirven o debemos buscar nuevas maneras para aprender.
-                    </p>
-                    <h5 className='mt-3'>Conozcamos cómo aprendemos y qué estrategias nos sirven en cada momento:</h5>
+            <div className='mt-5 '>
+                <p className="text-lg text-primary-dark-gray">
+                    Al momento de estudiar es necesario saber que cada uno de nosotros tiene diferentes modos de aprender, por lo tanto es importante que podamos conocernos a nosotros mismos y ver si las herramientas que utilizamos nos sirven o debemos buscar nuevas maneras para aprender.
+                </p>
+                <h5 className='mt-3'>Conozcamos cómo aprendemos y qué estrategias nos sirven en cada momento:</h5>
+                
+                <div className="grid sm:grid-cols-2">
+                    <img src="/assets/global/estudiar-mejor.png" alt="estudiar-mejor" />
+                    <img src="/assets/inicial/estudiando.jpg" alt="estudiar-mejor" />
                 </div>
-                <img src="/assets/global/estudiar-mejor.png" alt="estudiar-mejor" />
             </div>
 
             <div className='mt-5 text-lg text-primary-dark-gray'>

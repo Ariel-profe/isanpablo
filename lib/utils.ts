@@ -94,10 +94,6 @@ export const levels:ILevel[] = [
             {
                 id: 3,
                 img: '/assets/primaria/primaria3.webp'
-            }, 
-            {
-                id: 4,
-                img: '/assets/primaria/primaria4.webp'
             }
         ]
     },

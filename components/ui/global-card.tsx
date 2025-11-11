@@ -15,11 +15,11 @@ export const GlobalCard = ({img, href, title, desc, subtitle, isExternal = false
     <Link 
       href={href} 
       target={isExternal ? '_blank' : '_self'} 
-      className="group grid grid-cols-2 rounded focus:outline-none hover:bg-gray-100 transition-colors w-full"
+      className="group grid grid-cols-2 rounded focus:outline-none lg:hover:outline outline-slate-100 transition w-full"
       download={isDownloadble}
     >
       <div className="relative lg:h-full min-h-[50px] overflow-hidden w-full">
-        <img className="h-full w-full object-cover object-right lg:group-hover:scale-105 transition overflow-hidden" src={img}  alt={`imagen-${title}`} />
+        <img className="h-52 w-full object-contain lg:group-hover:scale-105 transition overflow-hidden" src={img}  alt={`imagen-${title}`} />
       </div>
 
       <div className="h-full">

@@ -83,7 +83,7 @@ export function Navbar() {
           <NavigationMenuItem>
             <Link href="/administracion" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Administracion
+                Administración
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
