@@ -71,6 +71,10 @@ export const levels:ILevel[] = [
                 id: 4,
                 img: '/assets/inicial/inicial4.webp'
             }, 
+            {
+                id: 5,
+                img: '/assets/inicial/inicial5.webp'
+            }, 
         ]
     },
     {

@@ -38,7 +38,6 @@ const SecundariaPage = () => {
         <GlobalCard
           href="https://forms.gle/VCq2GBUsbrCp5AmF6"
           title="Solicitud de vacante 2026"
-          subtitle="Vacante"
           img="/assets/homepage/vacante.jpg"
           desc="Te esperamos para vivir juntos tu camino a la excelencia"
           isExternal

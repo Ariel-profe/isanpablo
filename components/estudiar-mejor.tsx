@@ -9,11 +9,11 @@ export const EstudiarMejor = () => {
                 <p className="text-lg text-primary-dark-gray">
                     Al momento de estudiar es necesario saber que cada uno de nosotros tiene diferentes modos de aprender, por lo tanto es importante que podamos conocernos a nosotros mismos y ver si las herramientas que utilizamos nos sirven o debemos buscar nuevas maneras para aprender.
                 </p>
-                <h5 className='mt-3'>Conozcamos cómo aprendemos y qué estrategias nos sirven en cada momento:</h5>
+                <h5 className='mt-3 text-lg text-primary-dark-gray'>Conozcamos cómo aprendemos y qué estrategias nos sirven en cada momento:</h5>
                 
-                <div className="grid sm:grid-cols-2">
-                    <img src="/assets/global/estudiar-mejor.png" alt="estudiar-mejor" />
-                    <img src="/assets/inicial/estudiando.jpg" alt="estudiar-mejor" />
+                <div className="grid sm:grid-cols-2 w-full">
+                    <img src="/assets/global/estudiar-mejor.png" alt="estudiar-mejor" className="object-contain" />
+                    <img src="/assets/inicial/estudiando.jpg" alt="estudiando-mejor" className="object-contain" />
                 </div>
             </div>
 

@@ -44,7 +44,6 @@ const AdminPage = () => {
           <GlobalCard
            href="https://www.facebook.com/profile.php?id=100063448822390"
            title="Facebook"
-           subtitle='Administración'
            desc="Haz click para ir"
            img="/assets/logos/rrss.jpg"
            isExternal
@@ -53,7 +52,6 @@ const AdminPage = () => {
           <GlobalCard
            href="https://docs.google.com/forms/d/e/1FAIpQLSfADQikus7GGW-0ZTMTzQQG27uwxhItuFIO8TpgAC652fdPtw/viewform"
            title="Intranet"
-           subtitle='Administración'
            desc="Actualizar tu ficha de datos personales"
            img="/assets/logos/internet.webp"
            isExternal

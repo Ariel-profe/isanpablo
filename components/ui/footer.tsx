@@ -8,9 +8,9 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='relative w-full bg-primary-blue px-3 py-3 md:py-1'>
+    <footer className='relative w-full bg-primary-blue px-3 py-3'>
       <div className="container mx-auto relative grid md:grid-cols-4 items-center justify-items-center gap-1">
-        <div className='flex justify-center h-20 gap-3'>
+        <div className='flex justify-center h-20 gap-3 mt-5'>
           <img src='/assets/logos/50anios.svg' alt='logo' width={150} height={100} className='w-full h-full' />
           <a href="https://www.lamennais.org/es/" target='_blank' className='cursor-pointer w-full md:hover:opacity-70'>
             <img src='/assets/logos/laMennaisLogo.svg' alt='logo' width={150} height={100} className='w-full h-full' />

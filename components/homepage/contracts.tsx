@@ -13,7 +13,6 @@ export const Contracts = () => {
         <GlobalCard
           href="/assets/contrato2025.pdf"
           title="Contrato educativo ciclo lectivo 2025"
-          subtitle="Contrato"
           desc="Descarga el archivo en formato PDF"
           img="/assets/homepage/contrato.jpg"
           isDownloadble={true}
@@ -23,7 +22,6 @@ export const Contracts = () => {
         <GlobalCard
           href="https://forms.gle/VCq2GBUsbrCp5AmF6"
           title="Solicitud de vacante 2026"
-          subtitle="Vacante"
           img="/assets/homepage/vacante.jpg"
           desc="Te esperamos para vivir juntos tu camino a la excelencia"
           isExternal
