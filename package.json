@@ -4,7 +4,7 @@
   "description": "Sitio web de Instituto San Pablo, desarrollado por AMN Consultora Informatica",
   "author": "AMN Consultora Informatica",
   "license": "MIT",
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "npm@9.8.1",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
