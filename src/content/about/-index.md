@@ -31,10 +31,10 @@ counter:
 # Gallery
 gallery:
   images:
-    - "/src/assets/sliders/slider1.webp"
-    - "/src/assets/sliders/slider2.webp"
-    - "/src/assets/sliders/slider3.webp"
-    - "/src/assets/sliders/slider4.webp"
+    - "/images/sliders/slider1.webp"
+    - "/images/sliders/slider2.webp"
+    - "/images/sliders/slider3.webp"
+    - "/images/sliders/slider4.webp"
     
 
 ## our works
@@ -52,7 +52,7 @@ features:
 members:
   title: Nuestro equipo directivo
   description: Profesionales dedicados a proporcionar educación de calidad y excelencia académica
-  image: "/src/assets/global/organigrama.webp"
+  image: "/images/global/organigrama.webp"
 ---
 
 Instituto San Pablo es una institución educativa comprometida con la formación integral de estudiantes de excelencia. Durante más de seis décadas hemos brindado educación de calidad, combinando tradición académica con innovación pedagógica.

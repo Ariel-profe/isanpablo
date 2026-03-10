@@ -3,7 +3,7 @@ title: "Nivel Inicial"
 page_title: "Nivel Inicial"
 meta_title: "Nivel Inicial | Instituto San Pablo"
 description: "Descubre nuestro programa donde los niños pequeños desarrollan habilidades fundamentales, creatividad y valores en un ambiente cálido y seguro."
-image: "/src/assets/inicial/inicial1.webp"
+image: "/images/inicial/inicial1.webp"
 draft: false
 
 # Hero Section
@@ -12,9 +12,9 @@ hero:
   subtitle: "Los primeros pasos en el aprendizaje y la convivencia"
   description: "Un espacio seguro donde los niños pequeños exploran, juegan y aprenden desarrollando sus primeras habilidades cognitivas, sociales y emocionales."
   images: 
-      - "/src/assets/inicial/inicial1.webp"
-      - "/src/assets/inicial/inicial2.webp"
-      - "/src/assets/inicial/inicial3.webp"
+      - "/images/inicial/inicial1.webp"
+      - "/images/inicial/inicial2.webp"
+      - "/images/inicial/inicial3.webp"
 
 # Program Details
 program_info:

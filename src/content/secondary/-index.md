@@ -3,7 +3,7 @@ title: "Nivel Secundario"
 page_title: "Nivel Secundario"
 meta_title: "Nivel Secundario | Instituto San Pablo"
 description: "Descubre nuestro programa de educación secundaria, diseñado para desarrollar habilidades académicas avanzadas y antesala de estudios posteriores."
-image: "/src/assets/secundaria/secundaria1.webp"
+image: "/images/secundaria/secundaria1.webp"
 draft: false
 
 # Hero Section
@@ -12,9 +12,9 @@ hero:
   subtitle: "Construyendo las bases del conocimiento y los valores"
   description: "Un espacio donde tus hijos desarrollarán habilidades académicas, sociales y espirituales en un ambiente seguro y estimulante."
   images: 
-      - "/src/assets/secundaria/secundaria1.webp"
-      - "/src/assets/secundaria/secundaria2.webp"
-      - "/src/assets/secundaria/secundaria3.webp"
+      - "/images/secundaria/secundaria1.webp"
+      - "/images/secundaria/secundaria2.webp"
+      - "/images/secundaria/secundaria3.webp"
 
 # Program Details
 program_info:

@@ -3,7 +3,7 @@ title: "Nivel Primario"
 page_title: "Nivel Primario"
 meta_title: "Nivel Primario | Instituto San Pablo"
 description: "Descubre nuestro programa de educación primaria, diseñado para desarrollar habilidades fundamentales y valores en niños de 6 a 12 años."
-image: "/src/assets/primaria/primaria1.webp"
+image: "/images/primaria/primaria1.webp"
 draft: false
 
 # Hero Section
@@ -12,9 +12,9 @@ hero:
   subtitle: "Construyendo las bases del conocimiento y los valores"
   description: "Un espacio donde tus hijos desarrollarán habilidades académicas, sociales y espirituales en un ambiente seguro y estimulante."
   images: 
-      - "/src/assets/primaria/primaria1.webp"
-      - "/src/assets/primaria/primaria2.webp"
-      - "/src/assets/primaria/primaria3.webp"
+      - "/images/primaria/primaria1.webp"
+      - "/images/primaria/primaria2.webp"
+      - "/images/primaria/primaria3.webp"
 
 # Program Details
 program_info:

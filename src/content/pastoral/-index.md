@@ -3,7 +3,7 @@ title: "Pastoral"
 page_title: "Pastoral"
 meta_title: "Pastoral | Instituto San Pablo"
 description: "Área encargada de integrar la fe y los valores cristianos en la vida cotidiana de la institución."
-image: "/src/assets/pastoral/pastoral1.webp"
+image: "/images/pastoral/pastoral1.webp"
 draft: false
 
 # Hero Section
@@ -12,13 +12,13 @@ hero:
   subtitle: "Construyendo las bases del conocimiento y los valores"
   description: "Área encargada de integrar la fe y los valores cristianos en la vida cotidiana de la institución. No se limita solo a la enseñanza de religión, sino que busca que toda la comunidad (alumnos, docentes y familias) experimente una formación integral basada en el Evangelio"
   images: 
-      - "/src/assets/pastoral/pastoral1.webp"
-      - "/src/assets/pastoral/pastoral2.webp"
-      - "/src/assets/pastoral/pastoral3.webp"
-      - "/src/assets/pastoral/pastoral4.webp"
-      - "/src/assets/pastoral/pastoral5.webp"
-      - "/src/assets/pastoral/pastoral6.webp"
-      - "/src/assets/pastoral/pastoral7.webp"
+      - "/images/pastoral/pastoral1.webp"
+      - "/images/pastoral/pastoral2.webp"
+      - "/images/pastoral/pastoral3.webp"
+      - "/images/pastoral/pastoral4.webp"
+      - "/images/pastoral/pastoral5.webp"
+      - "/images/pastoral/pastoral6.webp"
+      - "/images/pastoral/pastoral7.webp"
 
 # Features/Pillars
 features:

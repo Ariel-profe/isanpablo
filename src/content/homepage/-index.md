@@ -2,7 +2,7 @@
 banner:
   title: "Instituto San Pablo"
   content: "Potenciamos el aprendiazje para asegurar un futuro mejor, comprometiéndonos con la excelencia, la verdad y la vocación."
-  image: /src/assets/homepage/logo.webp
+  image: /images/homepage/logo.webp
   button:
     enable: true
     label: Conocenos
@@ -40,18 +40,18 @@ service:
     tab_list:
       - title: Desarrollo de competencias académicas
         icon: "FiLock" #icon package react-icons
-        image: "/src/assets/homepage/academic-skills.jpg"
+        image: "/images/homepage/academic-skills.jpg"
       - title: Acompañamiento espiritual continuo
         icon: "FiClock" #icon package react-icons
-        image: "/src/assets/homepage/spiritual-accompaniment.jpg"
+        image: "/images/homepage/spiritual-accompaniment.jpg"
       - title: Programas de responsabilidad social
         icon: "FiBell" #icon package react-icons
-        image: "/src/assets/homepage/social-responsibility.jpg"
+        image: "/images/homepage/social-responsibility.jpg"
 
   our_service:
     - title: Formación académica de excelencia internacional
       description: Implementamos metodologías pedagógicas innovadoras respaldadas por estándares globales.
-      image: "/src/assets/homepage/academic-formation.jpg"
+      image: "/images/homepage/academic-formation.jpg"
       list:
         - Certificaciones reconocidas internacionalmente
         - Alianzas estratégicas con instituciones educativas
@@ -59,7 +59,7 @@ service:
     - title: Acompañamiento pastoral y espiritual continuo
       description: Brindamos orientación espiritual fundamentada en principios evangélicos que fortalecen la conciencia moral, el discernimiento vocacional y la dimensión transcendental de nuestros estudiantes.
       video:
-        thumbnail: "/src/assets/pastoral/pastoral1.webp"
+        thumbnail: "/images/pastoral/pastoral1.webp"
         video_id: "8JzyF9iIAvQ"
       button:
         enable: true

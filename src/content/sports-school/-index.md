@@ -3,7 +3,7 @@ title: "Escuela deportiva"
 page_title: "Escuela deportiva"
 meta_title: "Escuela deportiva | Instituto San Pablo"
 description: "Descubre nuestro programa de escuela deportiva, diseñado para desarrollar habilidades técnicas, valores y bienestar físico y mental en múltiples disciplinas."
-image: "/src/assets/deportiva/deportiva1.webp"
+image: "/images/deportiva/deportiva1.webp"
 draft: false
 
 # Hero Section
@@ -12,13 +12,13 @@ hero:
   subtitle: "Construyendo las bases del conocimiento y los valores"
   description: "Un espacio donde tus hijos desarrollarán habilidades académicas, sociales y espirituales en un ambiente seguro y estimulante."
   images: 
-      - "/src/assets/deportiva/deportiva1.webp"
-      - "/src/assets/deportiva/deportiva2.webp"
-      - "/src/assets/deportiva/deportiva3.webp"
-      - "/src/assets/deportiva/deportiva4.webp"
-      - "/src/assets/deportiva/deportiva5.webp"
-      - "/src/assets/deportiva/deportiva6.webp"
-      - "/src/assets/deportiva/deportiva7.webp"
+      - "/images/deportiva/deportiva1.webp"
+      - "/images/deportiva/deportiva2.webp"
+      - "/images/deportiva/deportiva3.webp"
+      - "/images/deportiva/deportiva4.webp"
+      - "/images/deportiva/deportiva5.webp"
+      - "/images/deportiva/deportiva6.webp"
+      - "/images/deportiva/deportiva7.webp"
 
 # Features/Pillars
 features:

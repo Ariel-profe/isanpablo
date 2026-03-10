@@ -5,7 +5,7 @@
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/favicon.ico",
-    "logo": "/src/assets/logos/logo-negro.webp",
+    "logo": "/images/logos/logo-negro.webp",
     "logo_width": "180",
     "logo_height": "60",
     "logo_text": "San Pablo"
