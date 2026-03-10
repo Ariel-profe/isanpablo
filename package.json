@@ -1,8 +1,8 @@
 {
-  "name": "pinwheel-astro",
+  "name": "instituto-san-pablo",
   "version": "3.3.0",
-  "description": "Astro and Tailwindcss Free Theme",
-  "author": "themefisher",
+  "description": "Sitio web de Instituto San Pablo, desarrollado por AMN Consultora Informatica",
+  "author": "AMN Consultora Informatica",
   "license": "MIT",
   "packageManager": "yarn@1.22.19",
   "type": "module",
