@@ -1,0 +1,79 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  counter: CollectionEntry<"about">["data"]["counter"];
+};
+const { counter } = Astro.props;
+---
+
+<div class="counter my-16 px-3">
+  <div class="row rounded-xl bg-white shadow-lg lg:py-10">
+    {
+      counter.map((item) => (
+        <div class="border-border sm:col-6 lg:col-3 py-10 text-center lg:border-r lg:py-0 last:lg:border-none">
+          <h2>
+            <span class="count" aria-valuenow={item.number}>
+              0
+            </span>
+            <span
+              class={"text-primary"}
+              style={{
+                color: item.color,
+              }}
+            >
+              +
+            </span>
+          </h2>
+          <p set:html={markdownify(item.name)} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  // astro:page-load event is fired when the page is loaded
+  document.addEventListener("astro:page-load", () => {
+    const counters = document.querySelectorAll(".count");
+    const duration = 1200;
+
+    const animateCounter = (counter) => {
+      const target = Number(counter.getAttribute("aria-valuenow") || 0);
+      const start = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.floor(progress * target);
+        counter.innerText = value.toString();
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          counter.innerText = target.toString();
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    counters.forEach((counter) => {
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              observer.disconnect();
+              animateCounter(counter);
+            }
+          },
+          { rootMargin: "100px" }
+        );
+
+        observer.observe(counter);
+      } else {
+        animateCounter(counter);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,51 @@
+---
+import {
+  Swiper,
+  SwiperPagination,
+  SwiperSlide,
+  SwiperWrapper,
+  
+} from "astro-swiper";
+import { Image } from "astro:assets";
+import type { SwiperOptions } from "swiper/types";
+
+const { list } = Astro.props;
+
+const swiperOptions: SwiperOptions = {
+  pagination: {
+    el: ".testimonial-slider-pagination",
+    type: "bullets",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  slidesPerView: 1
+};
+---
+
+<div class="cursor-grab">
+  <Swiper options={swiperOptions} class="reviews-carousel relative">
+    <SwiperWrapper>
+      {
+        list.map(
+          (item: string) => (
+            <SwiperSlide>
+             <Image 
+                src={item}
+                alt={item}
+                class="w-full h-auto object-cover rounded-xl"
+                width={1000}
+                height={400}
+             />
+            </SwiperSlide>
+          )
+        )
+      }
+    </SwiperWrapper>
+    <SwiperPagination class="testimonial-slider-pagination" />
+  </Swiper>
+</div>

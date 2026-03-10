@@ -1,0 +1,113 @@
+---
+import PageHeader from "@/components/PageHeader.astro";
+import Shape from "@/components/Shape.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const administration = (await getEntry(
+  "administration",
+  "-index"
+)) as CollectionEntry<"administration">;
+const { information, cta } = administration.data;
+const page_data = {
+  ...administration.data,
+  content: administration.data.description,
+};
+---
+
+<Base
+  title={administration.data.title}
+  meta_title={administration.data.meta_title}
+  description={administration.data.description}
+  image={administration.data.image}
+>
+  <Shape />
+  <section class="page-hero pb-14 pt-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-220.75 text-center">
+        <PageHeader page_data={page_data} />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      {
+        information.map((item, index) => (
+          <div class="gx-5 row mt-16 items-center first:mt-8">
+            <div
+              class={`lg:col-6 ${
+                index % 2 === 0 ? "lg:order-1" : "lg:order-0"
+              }`}
+            >
+              <div class="icon flex items-center justify-center bg-slate-200 rounded-xl py-10">
+                <DynamicIcon
+                  icon={item.icon}
+                  className="mt-4 w-20 h-20 text-primary"
+                />
+              </div>
+            </div>
+            <div
+              class={`mt-6 lg:col-6 lg:mt-0 ${
+                index % 2 === 0 ? "lg:order-0" : "lg:order-1"
+              }`}
+            >
+              <div class="text-container">
+                <h2 set:html={markdownify(item.title)} />
+
+                {item.list && (
+                  <ul class="mt-6 text-text-dark lg:-ml-4">
+                    {item.list.map((list) => (
+                      <li class="mb-2 flex items-center rounded px-4">
+                        - {list}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="px-3 py-10">
+    <div class="container">
+      <div class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-3 py-14">
+        <div class="lg:col-11">
+          <div class="row">
+            <div class="lg:col-7">
+              <h2
+                class="h1 text-white"
+                set:html={markdownify(cta.title)}
+              />
+              <div class="flex items-center gap-2">
+                {
+                  cta.buttons.map((button: any) => (
+                    <a class="btn btn-white mt-2" href={button.link} target="_blank">
+                      {button.label}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+            <div class="mt-8 lg:col-5 lg:mt-0">
+              <p class="text-white">
+                {
+                  cta.description && (
+                    <span set:html={markdownify(cta.description)} />
+                  )
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

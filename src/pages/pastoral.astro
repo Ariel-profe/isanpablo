@@ -1,0 +1,97 @@
+---
+import Slider from "@/components/Slider.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import Shape from "@/components/Shape.astro";
+import Base from "@/layouts/Base.astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+import { markdownify } from "@/lib/utils/textConverter";
+
+const pastoral = (await getEntry(
+  "pastoral",
+  "-index",
+)) as CollectionEntry<"pastoral">;
+const { data } = pastoral;
+const page_data = {
+  ...data,
+  content: pastoral.body,
+};
+---
+
+<Base
+  title={data.meta_title}
+  meta_title={data.meta_title}
+  description={data.description}
+>
+  <Shape />
+  <section class="page-hero pt-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-4xl text-center">
+        <PageHeader page_data={page_data} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section pb-10">
+    <div class="container max-w-6xl mx-auto">
+      <div class="rounded-3xl border border-slate-200 bg-white/70 p-3 shadow-sm">
+        <Slider list={data.hero.images} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section py-10 bg-theme-light/50">
+    <div class="container max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {
+          data.features.features_list.map((feature: any) => (
+            <div class="group rounded-xl border border-slate-200 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <div class="flex items-center gap-x-2">
+                <div class="text-3xl mb-4">{feature.icon}</div>
+                <h3 class="mb-3 text-xl font-bold">{feature.title}</h3>
+              </div>
+              <p class="text-text text-justify whitespace-pre-line leading-relaxed">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+   <!-- CTA Section -->
+  <section class="px-3 py-10">
+    <div class="container">
+      <div class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-3 py-14">
+        <div class="lg:col-11">
+          <div class="row">
+            <div class="lg:col-7">
+              <h2
+                class="h1 text-white"
+                set:html={markdownify(data.cta.title)}
+              />
+              <div class="flex items-center gap-2">
+                {
+                  data.cta.buttons.map((button: any) => (
+                    <a class="btn btn-white mt-2" href={button.link} target="_blank">
+                      {button.label}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+            <div class="mt-8 lg:col-5 lg:mt-0">
+              <p class="text-white">
+                {
+                  data.cta.description && (
+                    <span set:html={markdownify(data.cta.description)} />
+                  )
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

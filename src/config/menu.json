@@ -1,0 +1,60 @@
+{
+  "main": [
+    {
+      "name": "Nosotros",
+      "url": "/about"
+    },
+    {
+      "name": "Niveles",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Inicial",
+          "url": "/levels/initial"
+        },
+
+        {
+          "name": "Primaria",
+          "url": "/levels/primary"
+        },
+
+        {
+          "name": "Secundaria",
+          "url": "/levels/secondary"
+        }
+      ]
+    },
+    {
+      "name": "Esc. Deportiva",
+      "url": "/sports-school"
+    },
+    {
+      "name": "Administración",
+      "url": "/administration"
+    },
+    {
+      "name": "Pastoral",
+      "url": "/pastoral"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Nosotros",
+      "url": "/about"
+    },
+    {
+      "name": "Esc. Deportiva",
+      "url": "/sports-school"
+    },
+    {
+      "name": "Administración",
+      "url": "/administration"
+    },
+    {
+      "name": "Pastoral",
+      "url": "/pastoral"
+    }
+  ]
+}

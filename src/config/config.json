@@ -1,0 +1,47 @@
+{
+  "site": {
+    "title": "Instituto San Pablo",
+    "base_url": "https://isanpablo.com.ar",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/favicon.ico",
+    "logo": "/src/assets/logos/logo-negro.webp",
+    "logo_width": "180",
+    "logo_height": "60",
+    "logo_text": "San Pablo"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100
+  },
+
+  "google_tag_manager": {
+    "enable": false,
+    "gtm_id": "GTM-XXXXXX"
+  },
+
+  "call_to_action": {
+    "title": "Descargas y Recursos",
+    "description": "Accede a materiales exclusivos, guías y recursos relacionados a nuestra institución.",
+    "button": {
+      "label": "Ir a descargas",
+      "link": "/downloads"
+    }
+  },
+
+  "params": {
+    "email": "info@instituto-sanpablo.com",
+    "location": "San Martín 1425. Luján de Cuyo - Mendoza",
+    "phone1": "+54 261 498 0403",
+    "phone2": "+54 261 488 0001",
+    "contact_form_action": "#",
+    "copyright": "© 2026. Todos los derechos reservados a [AMN Consultora Informática](https://amn.com.ar)."
+  },
+
+  "metadata": {
+    "meta_author": "AMN Consultora Informática",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Instituto San Pablo"
+  }
+}

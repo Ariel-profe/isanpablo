@@ -1,0 +1,164 @@
+---
+import Slider from "@/components/Slider.astro";
+import PageHeader from "@/components/PageHeader.astro";
+import Shape from "@/components/Shape.astro";
+import Base from "@/layouts/Base.astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+import { markdownify } from "@/lib/utils/textConverter";
+import StudyTable from "@/components/levels/StudyTable.astro";
+
+const secondary = (await getEntry(
+  "secondary",
+  "-index",
+)) as CollectionEntry<"secondary">;
+const { data } = secondary;
+const page_data = {
+  ...data,
+  content: secondary.body,
+};
+---
+
+<Base
+  title={data.meta_title}
+  meta_title={data.meta_title}
+  description={data.description}
+>
+  <Shape />
+  <section class="page-hero pt-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-4xl text-center">
+        <PageHeader page_data={page_data} />
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section -->
+  <section class="section pb-10">
+    <div class="container max-w-6xl mx-auto">
+      <div class="rounded-3xl border border-slate-200 bg-white/70 p-3 shadow-sm">
+        <Slider list={data.hero.images} />
+      </div>
+
+      <!-- Program Info Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+        <div
+          class="p-6 bg-white rounded-xl shadow-sm border border-border text-center hover:shadow-md hover:-translate-y-1 transition-all"
+        >
+          <div class="text-4xl mb-3">🧑🏻‍🦱</div>
+          <p class="text-sm text-text/60 mb-1">Duración</p>
+          <p class="font-semibold text-dark">{data.program_info.duration}</p>
+        </div>
+        <div
+          class="p-6 bg-white rounded-xl shadow-sm border border-border text-center hover:shadow-md hover:-translate-y-1 transition-all"
+        >
+          <div class="text-4xl mb-3">📅</div>
+          <p class="text-sm text-text/60 mb-1">Turno</p>
+          <p class="font-semibold text-dark">{data.program_info.turn}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orientations Section -->
+  <section class="section py-10 bg-theme-light/50">
+    <div class="container max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="mb-4 text-4xl font-bold">Orientaciones</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {
+          data.orientations.map((orientation: any) => (
+            <div class="px-8 py-12 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all">
+              <p class="text-text text-center">{orientation}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section py-10 bg-theme-light/50">
+    <div class="container max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="mb-4 text-4xl font-bold">{data.features.title}</h2>
+        <p class="text-xl text-text max-w-2xl mx-auto">
+          {data.features.description}
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          data.features.features_list.map((feature: any) => (
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all">
+              <div class="text-5xl mb-4">{feature.icon}</div>
+              <h3 class="mb-3 text-xl font-bold">{feature.title}</h3>
+              <p class="text-text">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="section py-10">
+    <div class="container max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="mb-4 text-4xl font-bold">{data.facilities.title}</h2>
+        <p class="text-xl text-text max-w-2xl mx-auto">
+          {data.facilities.description}
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          data.facilities.list.map((facility: any) => (
+           <div class="p-4 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all">
+              <div class="text-5xl mb-4">{facility.icon}</div>
+              <h3 class="mb-3 text-xl font-bold">{facility.name}</h3>
+              <p class="text-text">{facility.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Table section -->
+  <StudyTable />
+
+  <!-- CTA Section -->
+  <section class="px-3 py-10">
+    <div class="container">
+      <div class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-3 py-14">
+        <div class="lg:col-11">
+          <div class="row">
+            <div class="lg:col-7">
+              <h2
+                class="h1 text-white"
+                set:html={markdownify(data.cta.title)}
+              />
+              <div class="flex items-center gap-2">
+                {
+                  data.cta.buttons.map((button: any) => (
+                    <a class="btn btn-white mt-2" href={button.link}>
+                      {button.label}
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+            <div class="mt-8 lg:col-5 lg:mt-0">
+              <p class="text-white">
+                {
+                  data.cta.description && (
+                    <span set:html={markdownify(data.cta.description)} />
+                  )
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

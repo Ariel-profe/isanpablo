@@ -1,0 +1,18 @@
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base title="Página no encontrada">
+  <section class="section">
+    <div class="container">
+      <div class="flex h-[40vh] items-center justify-center">
+        <div class="text-center">
+         
+          <h1 class="mb-4" set:html={"404 | Error"} />
+          <h2 class="mb-4" set:html={"Ups! Parece que te has perdido"} />
+          <a href="/" class="btn btn-primary mt-8">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

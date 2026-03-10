@@ -1,0 +1,54 @@
+---
+import PageHeader from "@/components/PageHeader.astro";
+import Shape from "@/components/Shape.astro";
+import Base from "@/layouts/Base.astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const downloads = (await getEntry(
+  "downloads",
+  "-index",
+)) as CollectionEntry<"downloads">;
+const { data } = downloads;
+const page_data = {
+  ...data,
+  content: downloads.body,
+};
+---
+
+<Base
+  title={data.meta_title}
+  meta_title={data.meta_title}
+  description={data.description}
+>
+  <Shape />
+  <section class="page-hero pt-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-3xl text-center">
+        <PageHeader page_data={page_data} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads Section -->
+  <section class="section py-10">
+    <div class="container max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-center justify-center gap-8">
+        {
+          data.downloads_list.map((facility: any) => (
+             <a 
+                href={facility.file_url} 
+                download={facility.isDownloadable} 
+                class="p-6 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all"
+                target="_blank"
+            >
+              <div class="text-3xl mb-4">{facility.icon}</div>
+              <h3 class="mb-3 text-xl font-bold">{facility.title}</h3>
+              <p class="text-text">{facility.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
