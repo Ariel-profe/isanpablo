@@ -1,7 +1,7 @@
 ---
 banner:
-  title: "Instituto San Pablo"
-  content: "Potenciamos el aprendiazje para asegurar un futuro mejor, comprometiéndonos con la excelencia, la verdad y la vocación."
+  title: "Potenciamos el aprendizaje para un futuro mejor"
+  content: "Nos comprometemos con la excelencia, la verdad y la vocación."
   image: /images/homepage/logo.webp
   button:
     enable: true

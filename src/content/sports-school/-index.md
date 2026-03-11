@@ -12,7 +12,7 @@ hero:
   subtitle: "Construyendo las bases del conocimiento y los valores"
   description: "Un espacio donde tus hijos desarrollarán habilidades académicas, sociales y espirituales en un ambiente seguro y estimulante."
   images: 
-      - "/images/deportiva/deportiva1.webp"
+      - "/images/deportiva/deportiva1.jpg"
       - "/images/deportiva/deportiva2.webp"
       - "/images/deportiva/deportiva3.webp"
       - "/images/deportiva/deportiva4.webp"

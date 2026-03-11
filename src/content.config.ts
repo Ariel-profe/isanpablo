@@ -78,14 +78,6 @@ const aboutCollection = defineCollection({
     description: z.string().optional(),
     meta_title: z.string().optional(),
     image: z.string().optional(),
-    buttons: z.array(
-      z.object({
-        label: z.string(),
-        link: z.string(),
-        outline: z.boolean().optional(),
-        enable: z.boolean().default(true),
-      })
-    ),
     // Counter
     counter: z.array(
       z.object({

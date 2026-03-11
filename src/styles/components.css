@@ -657,3 +657,12 @@ select:invalid {
     max-width: 100%;
   }
 }
+
+/* fixed height slider styles */
+.swiper-slide-fixed-height {
+  @apply h-[400px]! overflow-hidden;
+}
+
+.reviews-carousel {
+  @apply h-[400px]! overflow-hidden;
+}

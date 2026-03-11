@@ -4,7 +4,6 @@ import {
   SwiperPagination,
   SwiperSlide,
   SwiperWrapper,
-  
 } from "astro-swiper";
 import { Image } from "astro:assets";
 import type { SwiperOptions } from "swiper/types";
@@ -23,7 +22,7 @@ const swiperOptions: SwiperOptions = {
     disableOnInteraction: false,
   },
   loop: true,
-  slidesPerView: 1
+  slidesPerView: 1,
 };
 ---
 
@@ -31,19 +30,17 @@ const swiperOptions: SwiperOptions = {
   <Swiper options={swiperOptions} class="reviews-carousel relative">
     <SwiperWrapper>
       {
-        list.map(
-          (item: string) => (
-            <SwiperSlide>
-             <Image 
-                src={item}
-                alt={item}
-                class="w-full h-auto object-cover rounded-xl"
-                width={1000}
-                height={400}
-             />
-            </SwiperSlide>
-          )
-        )
+        list.map((item: string) => (
+          <SwiperSlide class="swiper-slide-fixed-height">
+            <Image
+              src={item}
+              alt={item}
+              class="w-full h-[350px] rounded-xl"
+              width={1000}
+              height={350}
+            />
+          </SwiperSlide>
+        ))
       }
     </SwiperWrapper>
     <SwiperPagination class="testimonial-slider-pagination" />

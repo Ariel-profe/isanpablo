@@ -7,7 +7,7 @@
 }
 
 .btn-outline-primary {
-  @apply relative rounded-[50px] border-primary bg-transparent text-center capitalize text-text-dark hover:bg-transparent hover:text-white hover:before:opacity-100;
+  @apply relative rounded-[50px] border-primary bg-transparent text-center text-text-dark hover:bg-transparent hover:text-white hover:before:opacity-100;
 }
 
 .btn-outline-primary::before {
@@ -15,11 +15,11 @@
 }
 
 .btn-outline-white {
-  @apply rounded-[50px] bg-transparent text-center capitalize text-text-dark;
+  @apply rounded-[50px] bg-transparent text-center text-text-dark;
 }
 
 .btn-white {
-  @apply min-w-[100px] rounded-[50px] border-white bg-white text-center capitalize text-text-dark! hover:shadow-md;
+  @apply min-w-[100px] rounded-[50px] border-white bg-white text-center text-text-dark! hover:shadow-md;
 }
 
 .btn-sm {

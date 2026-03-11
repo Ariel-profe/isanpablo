@@ -4,10 +4,6 @@ page_title: "Sobre nuestra institución"
 meta_title: ""
 description: ""
 image: ""
-buttons:
-  - label: Escribinos
-    link: "mailto:info@instituto-sanpablo.com"
-    enable: true
 
 # counter
 counter:
@@ -31,9 +27,9 @@ counter:
 # Gallery
 gallery:
   images:
-    - "/images/sliders/slider1.webp"
+    - "/images/sliders/slider1.jpg"
     - "/images/sliders/slider2.webp"
-    - "/images/sliders/slider3.webp"
+    - "/images/sliders/slider3.jpg"
     - "/images/sliders/slider4.webp"
     
 

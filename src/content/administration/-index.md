@@ -2,7 +2,7 @@
 title: "Administración"
 page_title: "Administración"
 meta_title: "Administración | Instituto San Pablo"
-description: "Información y enlaces de utilidad para una mejor comuncación y gestión de la institución."
+description: "Información y enlaces de utilidad para una mejor comunicación y gestión de la institución."
 image: ""
 
 # information
