@@ -8,9 +8,9 @@ draft: false
 
 # Features/Pillars
 downloads_list:
-    - title: "Contrato educativo ciclo lectivo 2025"
+    - title: "Contrato educativo ciclo lectivo 2026"
       description: "Descarga el archivo en formato PDF"
-      file_url: "/images/contrato2025.pdf"
+      file_url: "/images/contrato2026.pdf"
       icon: "📜"
       isDownloadable: true
     - title: "Solicitud de vacante 2026"
