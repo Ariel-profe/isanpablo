@@ -18,16 +18,15 @@
           "name": "Primaria",
           "url": "/levels/primary"
         },
-
         {
           "name": "Secundaria",
           "url": "/levels/secondary"
+        },
+        {
+          "name": "Esc. Deportiva",
+          "url": "/levels/sports-school"
         }
       ]
-    },
-    {
-      "name": "Esc. Deportiva",
-      "url": "/sports-school"
     },
     {
       "name": "Administración",

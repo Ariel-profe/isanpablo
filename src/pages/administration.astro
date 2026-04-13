@@ -59,13 +59,20 @@ const page_data = {
                 <h2 set:html={markdownify(item.title)} />
 
                 {item.list && (
-                  <ul class="mt-6 text-text-dark lg:-ml-4">
-                    {item.list.map((list) => (
-                      <li class="mb-2 flex items-center rounded px-4">
-                        - {list}
-                      </li>
-                    ))}
-                  </ul>
+                  <>
+                    <ul class="mt-6 text-text-dark lg:-ml-4">
+                      {item.list.map((list) => (
+                        <li class="mb-2 flex items-center rounded px-4">
+                          - {list}
+                        </li>
+                      ))}
+                    </ul>
+                    {item.link && (
+                      <a href={item.link} class="text-primary underline" target="_blank">
+                        Ir a Aulica
+                      </a>
+                    )}
+                  </>
                 )}
               </div>
             </div>

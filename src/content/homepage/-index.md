@@ -65,4 +65,11 @@ service:
         enable: true
         label: Ir a Pastoral
         link: "/pastoral"
+    - title: Escuela deportiva
+      description: Formamos deportistas - Formamos personas.
+      image: "/images/homepage/esc-deportiva.jpeg"
+      button:
+        enable: true
+        label: Conocer
+        link: "/levels/sports-school" 
 ---

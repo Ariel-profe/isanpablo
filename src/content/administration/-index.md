@@ -11,20 +11,13 @@ information:
     icon: "FiClock"
     list:
       - Lunes a viernes
-      - 7:30 a 12 hs
-  - title: En el colegio sólo se cobran cuotas vencidas con
+      - 7:30 a 11:30 hs
+  - title: Aulica
     icon: "FiDollarSign"
     list:
-      - Efectivo
-      - Tarjeta de crédito y débito
-      - Cheques
-  - title: Medios de pago
-    icon: "FiCreditCard"
-    list:
-      - Débito automático (CBU y DNI del titular). Descuentos se realizan una única vez, los días 5 de cada mes
-      - Descuento en tarjeta de crédito (tarjeta VISA y DNI del titular)
-      - PAGOMISCUENTAS (Buscar en rubro "Establecimientos educativos"-"San Pablo Mendoza" y cargar el código que aparece en la factura)
-      - Pago fácil (cupón mes en curso)
+      - Autogestión de pagos
+      - Seguimiento de cuenta corriente
+    link: https://aulica.com.ar/
 
 # Contact CTA
 cta:

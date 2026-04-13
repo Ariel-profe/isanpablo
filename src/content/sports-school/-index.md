@@ -47,22 +47,20 @@ features:
 # Facilities
 facilities:
   title: "Disciplinas"
-  description: "Contamos con los siguientes deportes mencionados a continuación."
+  description: "Contamos con las siguientes actividades mencionadas a continuación."
   list:
-    - name: "Basquet masculino y femenino (federado): + 4 años"
-      icon: "🏀"
-    - name: "Futsal masculino (federado): + 4 años"
+    - name: "Futsal masculino y femenino: + 4 años"
       icon: "⚽"
-    - name: "Futsal femenino (federado): + 4 años"
-      icon: "🥅"
-    - name: "Danzas urbanas - Free dance - Hip hop: + 4 años "
-      icon: "🕺🏻"
-    - name: "Taekwondo ITF: + 4 años"
-      icon: "🥋"
+    - name: "Básquet masculino y femenino: + 4 años"
+      icon: "🏀"
     - name: "Iniciación deportiva: 4 y 5 años"
       icon: "🛝"
     - name: "Multideporte: 6 a 10 años"
       icon: "🎾"
+    - name: "Taekwondo mixto: 4 a 12 años"
+      icon: "🥋"
+    - name: "Country dance adultos"
+      icon: "🕺🏻"
 
 # Contact CTA
 cta:

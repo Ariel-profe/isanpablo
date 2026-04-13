@@ -401,6 +401,7 @@ const administrationCollection = defineCollection({
         title: z.string(),
         icon: z.string(),
         list: z.array(z.string()).optional(),
+        link: z.string().optional(),
       })
     ),
 
