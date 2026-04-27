@@ -1,5 +1,6 @@
 import { glob } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from 'astro/zod';
 
 // Homepage Collection Schema
 const homepageCollection = defineCollection({
@@ -8,7 +9,7 @@ const homepageCollection = defineCollection({
     banner: z.object({
       title: z.string(),
       content: z.string().optional(),
-      image: z.string(),
+      images: z.array(z.string()),
       button: z
         .object({
           label: z.string(),
@@ -388,6 +389,7 @@ const pastoralCollection = defineCollection({
 
 // Administration Collection Schema
 const administrationCollection = defineCollection({
+  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/administration" }),
   schema: z.object({
     title: z.string(),
     page_title: z.string(),

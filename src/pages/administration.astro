@@ -4,13 +4,16 @@ import Shape from "@/components/Shape.astro";
 import DynamicIcon from "@/helpers/DynamicIcon";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
-const administration = (await getEntry(
-  "administration",
-  "-index"
-)) as CollectionEntry<"administration">;
+const administration = await getEntry("administration", "-index");
+
+if (!administration) {
+  throw new Error(
+    "Administration entry not found for id '-index'."
+  );
+}
+
 const { information, cta } = administration.data;
 const page_data = {
   ...administration.data,

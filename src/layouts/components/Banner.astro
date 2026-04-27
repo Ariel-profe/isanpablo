@@ -1,8 +1,9 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
+import Slider from "./Slider.astro";
 const { banner } = Astro.props;
-const { title, button, image, content } = banner;
+const { title, button, images, content } = banner;
 ---
 
 <section class="section banner relative min-h-[calc(100vh-80px)] flex items-center">
@@ -26,13 +27,14 @@ const { title, button, image, content } = banner;
       <div class="flex-1 max-w-2xl">
         <div class="relative">
           <div class="absolute -inset-6 bg-linear-to-br from-primary/10 to-primary/5 rounded-3xl blur-3xl opacity-60"></div>
-          <Image
+          <!-- <Image
             class="relative w-full h-auto object-cover rounded-2xl lg:hover:shadow-2xl transition-shadow"
             alt="banner"
             src={image}
             width={603}
             height={396}
-          />
+          /> -->
+          <Slider list={images} />
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import Works from "@/components/about/Works.astro";
 import Base from "@/layouts/Base.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
+import Motto from "@/components/about/Motto.astro";
 
 const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
 const { counter, gallery, features, members } = about.data;
@@ -34,6 +35,7 @@ const page_data = {
         <Slider list={gallery.images} />
       </div>
       <Works features={features} />
+      <Motto />
       <OurMembers members={members} />
     </div>
   </section>

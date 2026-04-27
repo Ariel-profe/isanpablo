@@ -12,12 +12,13 @@ information:
     list:
       - Lunes a viernes
       - 7:30 a 11:30 hs
+    link: "https://aulica.com.ar/"
   - title: Aulica
     icon: "FiDollarSign"
     list:
       - Autogestión de pagos
       - Seguimiento de cuenta corriente
-    link: https://aulica.com.ar/
+    link: "https://aulica.com.ar/"
 
 # Contact CTA
 cta:
@@ -27,6 +28,7 @@ cta:
     - label: "Facebook administración"
       link: "https://www.facebook.com/people/Instituto-San-Pablo-Administracion-Lujan-de-Cuyo/100063448822390/"
       enable: true
+      style: "outline"
     - label: "Intranet"
       link: "https://docs.google.com/forms/d/e/1FAIpQLSfADQikus7GGW-0ZTMTzQQG27uwxhItuFIO8TpgAC652fdPtw/viewform"
       enable: true

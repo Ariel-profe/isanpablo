@@ -2,7 +2,10 @@
 banner:
   title: "Potenciamos el aprendizaje para un futuro mejor"
   content: "Nos comprometemos con la excelencia, la verdad y la vocación."
-  image: /images/homepage/logo.webp
+  images: [
+    "/images/homepage/logo.webp", 
+    "/images/homepage/logo-lema.png"
+  ]
   button:
     enable: true
     label: Conocenos
