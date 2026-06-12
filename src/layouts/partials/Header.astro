@@ -122,13 +122,61 @@ const { pathname } = Astro.url;
 
 <script is:inline>
   const initHeader = () => {
+    const navToggle = document.querySelector("#nav-toggle");
+    const navMenu = document.querySelector("#nav-menu");
+
+    const updateBodyScroll = () => {
+      if (!(navToggle instanceof HTMLInputElement)) return;
+      if (window.innerWidth < 1024 && navToggle.checked) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    };
+
+    const closeMobileMenu = () => {
+      if (!(navToggle instanceof HTMLInputElement)) return;
+      navToggle.checked = false;
+      updateBodyScroll();
+    };
+
+    if (navToggle instanceof HTMLInputElement && !navToggle.dataset.bound) {
+      navToggle.addEventListener("change", updateBodyScroll);
+      navToggle.dataset.bound = "true";
+    }
+
+    if (navMenu && !navMenu.dataset.bound) {
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+      navMenu.dataset.bound = "true";
+    }
+
+    if (!document.body.dataset.navEscBound) {
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeMobileMenu();
+        }
+      });
+      document.body.dataset.navEscBound = "true";
+    }
+
+    if (!document.body.dataset.navResizeBound) {
+      window.addEventListener("resize", updateBodyScroll, { passive: true });
+      document.body.dataset.navResizeBound = "true";
+    }
+
+    updateBodyScroll();
+
     document.querySelectorAll(".dropdown-button").forEach((button) => {
+      if (button.dataset.bound) return;
       button.addEventListener("click", (e) => {
         const dropdown = e.currentTarget.querySelector(".nav-dropdown-list");
         if (dropdown) {
           dropdown.classList.toggle("hidden");
         }
       });
+      button.dataset.bound = "true";
     });
 
     // Sticky header functionality
@@ -137,30 +185,33 @@ const { pathname } = Astro.url;
       return;
     }
 
-    const updateHeader = () => {
-      if (window.scrollY > 0) {
-        header.classList.add("header-sticky");
-      } else {
-        header.classList.remove("header-sticky");
-      }
-    };
+    if (!header.dataset.stickyBound) {
+      const updateHeader = () => {
+        if (window.scrollY > 0) {
+          header.classList.add("header-sticky");
+        } else {
+          header.classList.remove("header-sticky");
+        }
+      };
 
-    // Apply initial state
-    updateHeader();
+      // Apply initial state
+      updateHeader();
 
-    // Throttled scroll handler
-    let ticking = false;
-    const scrollHandler = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(() => {
-          updateHeader();
-          ticking = false;
-        });
-      }
-    };
+      // Throttled scroll handler
+      let ticking = false;
+      const scrollHandler = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(() => {
+            updateHeader();
+            ticking = false;
+          });
+        }
+      };
 
-    window.addEventListener("scroll", scrollHandler, { passive: true });
+      window.addEventListener("scroll", scrollHandler, { passive: true });
+      header.dataset.stickyBound = "true";
+    }
   };
 
   // Run on initial load

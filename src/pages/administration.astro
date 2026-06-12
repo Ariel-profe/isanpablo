@@ -36,6 +36,7 @@ const page_data = {
     </div>
   </section>
 
+  <!-- Information Section -->
   <section>
     <div class="container">
       {
@@ -70,11 +71,20 @@ const page_data = {
                         </li>
                       ))}
                     </ul>
-                    {item.link && (
-                      <a href={item.link} class="text-primary underline" target="_blank">
-                        Ir a Aulica
-                      </a>
-                    )}
+                    <div class="flex items-center gap-2">
+                      {item.link && (
+                        <a href={item.link} class="text-primary underline bg-slate-200 rounded px-3" target="_blank">
+                          {item.title === "Aulica" ? "Ir a Aulica" : "Ir a Handing"}
+                        </a>
+                      )}
+                      {
+                        item.pdf && (
+                          <a href={item.pdf} class="text-primary underline bg-slate-200 rounded px-3" target="_blank">
+                            Nota PDF
+                          </a>
+                        )
+                      }
+                  </div>
                   </>
                 )}
               </div>

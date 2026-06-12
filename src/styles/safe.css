@@ -8,7 +8,7 @@ input#nav-toggle:checked ~ label#hide-button {
 }
 
 input#nav-toggle:checked ~ #nav-menu {
-  @apply block lg:flex;
+  @apply absolute left-0 right-0 top-full z-40 mt-2 block w-full rounded-xl border border-border bg-white p-4 text-left shadow-lg lg:static lg:z-auto lg:mt-0 lg:flex lg:w-auto lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none;
 }
 
 /* form style */

@@ -404,6 +404,7 @@ const administrationCollection = defineCollection({
         icon: z.string(),
         list: z.array(z.string()).optional(),
         link: z.string().optional(),
+        pdf: z.string().optional(),
       })
     ),
 
