@@ -7,8 +7,17 @@ const homepageCollection = defineCollection({
   loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/homepage" }),
   schema: z.object({
     banner: z.object({
+      eyebrow: z.string().optional(),
       title: z.string(),
       content: z.string().optional(),
+      highlights: z
+        .array(
+          z.object({
+            value: z.string(),
+            label: z.string(),
+          })
+        )
+        .optional(),
       images: z.array(z.string()),
       button: z
         .object({
@@ -92,6 +101,20 @@ const aboutCollection = defineCollection({
     gallery: z.object({
       images: z.array(z.string()),
     }),
+    // History
+    history: z
+      .object({
+        title: z.string(),
+        description: z.string().optional(),
+        timeline: z.array(
+          z.object({
+            year: z.string(),
+            title: z.string(),
+            content: z.string(),
+          })
+        ),
+      })
+      .optional(),
     // Our Work
     features: z.object({
       title: z.string(),
@@ -447,6 +470,26 @@ const downloadsCollection = defineCollection({
   }),
 });
 
+// Contact collection schema
+const contactCollection = defineCollection({
+  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/contact" }),
+  schema: z.object({
+    title: z.string(),
+    page_title: z.string().optional(),
+    meta_title: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
+    admission: z.object({
+      title: z.string(),
+      description: z.string(),
+      button: z.object({
+        label: z.string(),
+        link: z.string(),
+      }),
+    }),
+  }),
+});
+
 // Pages collection schema
 const pagesCollection = defineCollection({
   schema: z.object({
@@ -472,4 +515,5 @@ export const collections = {
   "sports-school": sportsSchoolCollection,
   pastoral: pastoralCollection,
   downloads: downloadsCollection,
+  contact: contactCollection,
 };

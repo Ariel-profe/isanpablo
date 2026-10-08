@@ -1,6 +1,7 @@
 ---
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
+import { getEntry } from "astro:content";
 
 export interface ChildNavigationLink {
   name: string;
@@ -16,6 +17,8 @@ export interface NavigationLink {
 
 const { main }: { main: NavigationLink[] } = menu;
 const { pathname } = Astro.url;
+const contact = await getEntry("contact", "-index");
+const admissionLink = contact?.data.admission.button.link ?? "/contact";
 ---
 
 <header class="header">
@@ -111,11 +114,11 @@ const { pathname } = Astro.url;
         ))
       }
       <li class="nav-item mt-2 lg:hidden">
-        <a class="btn btn-white btn-sm border-border" href="/downloads">Descargas</a>
+        <a class="btn btn-primary btn-sm" href={admissionLink} target="_blank" rel="noopener noreferrer">Inscripciones</a>
       </li>
     </ul>
     <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
-      <a class="btn btn-primary btn-sm" href="/downloads">Descargas</a>
+      <a class="btn btn-primary btn-sm" href={admissionLink} target="_blank" rel="noopener noreferrer">Inscripciones</a>
     </div>
   </nav>
 </header>

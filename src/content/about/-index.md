@@ -33,6 +33,21 @@ gallery:
     - "/images/sliders/slider4.webp"
     
 
+## history
+history:
+  title: Nuestra historia
+  description: Más de seis décadas acompañando a las familias de Luján de Cuyo.
+  timeline:
+    - year: "1964"
+      title: Fundación del Instituto
+      content: Se funda el Instituto San Pablo por iniciativa del Padre Paulino Reale, a cargo de la Parroquia Santa María Goretti, junto al grupo A.B.C. (Amigos del Bien Común), para dar respuesta a las necesidades educativas del departamento de Luján de Cuyo. El desafío fue ser la primera escuela técnica y católica para varones.
+    - year: "1987"
+      title: Llegan los Hermanos Menesianos
+      content: La Congregación de los Hermanos de la Instrucción Cristiana se hace cargo del Instituto para continuar la obra educativa, inspirados por la consigna "Dios Solo".
+    - year: "Hoy"
+      title: Una comunidad educativa integral
+      content: Acompañamos a niños y jóvenes en los niveles inicial, primario y secundario, junto a nuestra Escuela Deportiva, formándolos en el conocimiento y en la presencia de Jesús en sus vidas.
+
 ## our works
 features:
   title: Al estilo de <br /> Juan María de La Mennais

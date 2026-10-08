@@ -35,6 +35,14 @@
     {
       "name": "Pastoral",
       "url": "/pastoral"
+    },
+    {
+      "name": "Descargas",
+      "url": "/downloads"
+    },
+    {
+      "name": "Contacto",
+      "url": "/contact"
     }
   ],
 
@@ -44,16 +52,20 @@
       "url": "/about"
     },
     {
-      "name": "Esc. Deportiva",
-      "url": "/levels/sports-school"
-    },
-    {
       "name": "Administración",
       "url": "/administration"
     },
     {
       "name": "Pastoral",
       "url": "/pastoral"
+    },
+    {
+      "name": "Descargas",
+      "url": "/downloads"
+    },
+    {
+      "name": "Contacto",
+      "url": "/contact"
     }
   ]
 }

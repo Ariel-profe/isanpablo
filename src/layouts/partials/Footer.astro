@@ -3,67 +3,86 @@ import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
-const { footer } = menu;
-const { copyright, location, email, phone1, phone2 } = config.params;
+import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+const { footer, main } = menu;
+const levels = main.find((item) => item.hasChildren)?.children ?? [];
+const { copyright, location, email, phone1, phone2, footer_description } =
+  config.params;
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${config.site.title}, ${location}`
+)}`;
 ---
 
 <footer class="footer bg-light">
   <div class="container">
     <div class="gx-5 row pb-10">
-      <div class="col-12 mt-12 md:col-4">
-        <div class="flex gap-4">
-          <Image 
+      <div class="col-12 mt-12 lg:col-4">
+        <div class="flex items-center gap-5">
+          <Image
             src="/images/logos/50-negro.webp"
             alt="Logo 50 años"
-            width={80}
-            height={40}
+            width={96}
+            height={48}
           />
-          <Image 
+          <Image
             src="/images/logos/la-mennais-negro.webp"
             alt="Logo La Mennais"
-            width={80}
-            height={40}
+            width={96}
+            height={48}
           />
         </div>
+        <p class="mt-6 max-w-xs leading-relaxed">{footer_description}</p>
       </div>
 
-      <div class="col-12 mt-12 md:col-4">
+      <div class="col-6 mt-12 md:col-3 lg:col-2">
         <h6>Enlaces</h6>
-        <ul>
+        <ul class="space-y-3">
           {
-            footer.map((item, i) => (
-              <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                <a class="hover:text-primary hover:underline " href={item.url}>
-                  {item.name}
-                </a>
+            footer.map((item) => (
+              <li>
+                <a href={item.url}>{item.name}</a>
               </li>
             ))
           }
         </ul>
       </div>
 
-      <div class="col-12 mt-12 md:col-4">
-        <h6>Ubicación y Contacto</h6>
-        <ul>
-          <li class="mb-2 text-sm">{location}</li>
-          <li class="mb-2">
-            <a class="mb-2 hover:text-primary" href={`mailto:${email}`}
-              >{email}</a
-            >
-          </li>
-          <li>
-            <a class="hover:text-primary hover:underline" href={`tel:${phone1}`}
-              >{phone1}</a
-            >
-          </li>
-          <li>
-            <a class="hover:text-primary hover:underline" href={`tel:${phone2}`}
-              >{phone2}</a
-            >
-          </li>
+      <div class="col-6 mt-12 md:col-3 lg:col-2">
+        <h6>Niveles</h6>
+        <ul class="space-y-3">
+          {
+            levels.map((item) => (
+              <li>
+                <a href={item.url}>{item.name}</a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
+      <div class="col-12 mt-12 md:col-6 lg:col-4">
+        <h6>Ubicación y Contacto</h6>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <FiMapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
+              {location}
+            </a>
+          </li>
+          <li class="flex items-start gap-3">
+            <FiMail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            <a href={`mailto:${email}`} class="break-all">{email}</a>
+          </li>
+          {
+            [phone1, phone2].map((phone) => (
+              <li class="flex items-start gap-3">
+                <FiPhone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </div>
   <div class="container max-w-360">

@@ -8,9 +8,10 @@ import Base from "@/layouts/Base.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 import Motto from "@/components/about/Motto.astro";
+import History from "@/components/about/History.astro";
 
 const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
-const { gallery, features, members } = about.data;
+const { gallery, history, features, members } = about.data;
 const page_data = {
   ...about.data,
   content: about.body,
@@ -32,6 +33,7 @@ const page_data = {
       <div class="rounded-3xl border border-slate-200 bg-white/70 p-3 shadow-sm mt-10">
         <Slider list={gallery.images} />
       </div>
+      {history && <History history={history} />}
       <Works features={features} />
       <Motto />
       <OurMembers members={members} />

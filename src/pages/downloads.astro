@@ -36,11 +36,11 @@ const page_data = {
       <div class="flex flex-wrap items-center justify-center gap-8">
         {
           data.downloads_list.map((facility: any) => (
-             <a 
-                href={facility.file_url} 
-                download={facility.isDownloadable} 
-                class="p-6 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all"
-                target="_blank"
+            <a
+              href={facility.file_url}
+              download={facility.isDownloadable}
+              class="p-6 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all"
+              target="_blank"
             >
               <div class="text-3xl mb-4">{facility.icon}</div>
               <h3 class="mb-3 text-xl font-bold">{facility.title}</h3>

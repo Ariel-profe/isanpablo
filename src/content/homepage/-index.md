@@ -1,9 +1,17 @@
 ---
 banner:
+  eyebrow: "Hermanos Menesianos · Luján de Cuyo, Mendoza"
   title: "Potenciamos el aprendizaje para un futuro mejor"
   content: "Nos comprometemos con la excelencia, la verdad y la vocación."
+  highlights:
+    - value: "1964"
+      label: "Año de fundación"
+    - value: "3 niveles"
+      label: "Inicial, primaria y secundaria"
+    - value: "Dios Solo"
+      label: "Consigna menesiana"
   images: [
-    "/images/homepage/logo.webp", 
+    "/images/homepage/logo.svg", 
     "/images/homepage/logo-lema.png"
   ]
   button:
@@ -14,24 +22,24 @@ banner:
 ##key features
 key_features:
   title: "Pilares Fundamentales de Nuestra Institución"
-  description: Nos distinguimos por nuestro compromiso con la formación integral de nuestros estudiantes, integrando valores éticos, académicos y espirituales en cada aspecto de nuestra labor educativa.
+  description: Nos distinguimos por nuestro compromiso con la formación integral de nuestros estudiantes, incorporando valores éticos, académicos y espirituales en cada aspecto de nuestra labor educativa.
   feature_list:
-    - icon: "FiMap" #icon package react-icons
+    - icon: "FiBookOpen" #icon package react-icons
       title: Educación Integral
       content: Ofrecemos una educación que trasciende lo académico, desarrollando el pensamiento crítico, la conciencia ética y el espíritu solidario.
-    - icon: "FiLock" #icon package react-icons
+    - icon: "FiHeart" #icon package react-icons
       title: Formación Cristiana
       content: Cultivamos valores evangélicos esenciales que guían la vida de nuestros estudiantes hacia la justicia, la compasión y el servicio comunitario.
-    - icon: "FiLink" #icon package react-icons
+    - icon: "FiAward" #icon package react-icons
       title: Excelencia Académica
       content: Sustentamos rigurosos estándares pedagógicos que preparan a nuestros egresados para enfrentar los desafíos contemporáneos con competencia y responsabilidad.
-    - icon: "FiBell" #icon package react-icons
+    - icon: "FiUsers" #icon package react-icons
       title: Comunidad Inclusiva
       content: Generamos espacios seguros donde cada persona es valorada, independientemente de su origen, condición o circunstancia personal.
-    - icon: "FiMonitor" #icon package react-icons
+    - icon: "FiUserCheck" #icon package react-icons
       title: Mentoría Personalizada
       content: Proporcionamos acompañamiento individual que reconoce los dones particulares de cada estudiante y potencia su desarrollo holístico.
-    - icon: "FiMap" #icon package react-icons
+    - icon: "FiGlobe" #icon package react-icons
       title: Compromiso Social
       content: Inspiramos en nuestros alumnos la responsabilidad de transformar su realidad social mediante acciones concretas de bien común.
 

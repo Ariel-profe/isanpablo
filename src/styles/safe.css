@@ -11,6 +11,22 @@ input#nav-toggle:checked ~ #nav-menu {
   @apply absolute left-0 right-0 top-full z-40 mt-2 block w-full rounded-xl border border-border bg-white p-4 text-left shadow-lg lg:static lg:z-auto lg:mt-0 lg:flex lg:w-auto lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none;
 }
 
+/* body scroll is locked while the mobile menu is open, so the menu must fit the visible area (iOS Safari bars included) */
+@media (max-width: 1023px) {
+  input#nav-toggle:checked ~ #nav-menu {
+    max-height: calc(100vh - 6rem);
+    max-height: calc(100dvh - 6rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+/* svh = viewport height with iOS Safari toolbars visible */
+.banner {
+  min-height: calc(100vh - 80px);
+  min-height: calc(100svh - 80px);
+}
+
 /* form style */
 .form-input {
   @apply w-full rounded border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary;

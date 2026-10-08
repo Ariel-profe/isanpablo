@@ -8,14 +8,9 @@ draft: false
 
 # Features/Pillars
 downloads_list:
-    - title: "Contrato educativo ciclo lectivo 2026"
-      description: "Descarga el archivo en formato PDF"
-      file_url: "/images/contrato2026.pdf"
-      icon: "📜"
-      isDownloadable: true
-    - title: "Solicitud de vacante 2026"
+    - title: "Solicitud de vacante 2027"
       description: "Continuar para ir al formulario de vacante"
-      file_url: "https://docs.google.com/forms/d/e/1FAIpQLSefkKozNIpE9-r_2evf71SUN9LVKPGe4zQqhskJLIsme9oF2Q/viewform"
+      file_url: "https://docs.google.com/forms/d/e/1FAIpQLSe-KkvS0qXY5WCDL0hhyshEOHSJYX4b1gKajtx6qZsQrAAN_g/viewform"
       icon: "🥇"
       isDownloadable: false
 ---

@@ -1,0 +1,40 @@
+---
+description: Hoja de ruta del mantenimiento mensual del sitio del Instituto San Pablo (qué se hizo cada mes y qué queda pendiente). Consultar al planificar o ejecutar el mantenimiento del mes.
+alwaysApply: false
+---
+
+# Mantenimiento mensual – Instituto San Pablo
+
+Cliente: Instituto San Pablo (Hermanos Menesianos), Luján de Cuyo, Mendoza. Niveles inicial, primario, secundario y Escuela Deportiva.
+Es el plan de mantenimiento de menor costo: cada mes se hacen 2 a 4 mejoras visibles pero de baja dificultad, guardando opciones para los meses siguientes.
+
+## Hecho
+
+**Octubre 2026**
+- Pilares (home): grilla 3×2, íconos acordes en recuadro, efecto hover.
+- Footer: columnas Enlaces / Niveles / Contacto con íconos, dirección a Google Maps.
+- Fix: desborde horizontal del slider del banner en mobile.
+- Banner: etiqueta "Hermanos Menesianos · Luján de Cuyo" + datos (1964, 3 niveles, "Dios Solo").
+- Nosotros: línea de tiempo "Nuestra historia" (1964 / 1987 / Hoy), datos tomados de `public/images/global/historia.png`.
+- Nueva página `/contact` (Contacto e Inscripciones) con mapa; "Contacto" en el menú y botón "Inscripciones" del header directo al formulario de vacante.
+
+## Pendiente (en orden sugerido)
+
+- **Noviembre:** reemplazar emojis de las páginas de niveles (`src/content/{initial,primary,secondary,sports-school}`) por íconos `Fi*` como en la home; mejorar estilo de los botones "Ir a Aulica / Handing" y "Nota PDF" en `src/pages/administration.astro` (label hardcodeado).
+- **Diciembre:** revisar con el cliente textos genéricos de la home ("excelencia internacional", "certificaciones reconocidas internacionalmente", "alianzas estratégicas") y reemplazar fotos de stock (`academic-formation.jpg`, `academic-skills.jpg`, etc.) por fotos reales.
+- **Enero:** frase propia para el H1 del banner y fotos de alumnos/edificio para el slider del banner.
+- **Febrero:** sección simple de novedades (inicio de ciclo lectivo).
+- **Marzo:** redes sociales reales en el footer (`src/config/social.json` tiene links de ejemplo) y, si el cliente lo pide, botón de WhatsApp.
+
+## Pendiente de confirmar con el cliente
+
+- Logo "50 años" del footer vs. fundación en 1964 (62 años): aclarar a qué aniversario corresponde antes de usarlo.
+- Material necesario: frase para el banner, fotos reales, URLs de redes sociales.
+
+## Notas técnicas
+
+- Safari iOS tiene la barra de navegación abajo: no usar `100vh`/`h-screen` para alturas de pantalla. Usar `svh` para secciones (ej. `.banner` en `src/styles/safe.css`) y `dvh` para overlays/menús; el menú mobile tiene `max-height` con `dvh` y scroll interno porque el body se bloquea al abrirlo.
+
+- El link del formulario de vacante está en `src/content/contact/-index.md` (lo usan la página de contacto y el botón del header) y en `src/content/downloads/-index.md`: actualizar ambos al cambiar el año.
+- El dev server de Astro a veces no resincroniza todo el markdown tras varias ediciones seguidas; volver a guardar el archivo lo soluciona.
+- Al terminar cada mes, mover lo realizado a "Hecho" y actualizar los pendientes.
