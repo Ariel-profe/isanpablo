@@ -1,7 +1,12 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 import Slider from "./Slider.astro";
+
+type Props = {
+  banner: CollectionEntry<"homepage">["data"]["banner"];
+};
 const { banner } = Astro.props;
 const { eyebrow, title, button, images, content, highlights } = banner;
 ---
@@ -20,10 +25,10 @@ const { eyebrow, title, button, images, content, highlights } = banner;
         }
         <h1 class="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-tight" set:html={markdownify(title)} />
 
-        <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl" set:html={markdownify(content)} />
+        {content && <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl" set:html={markdownify(content)} />}
 
         {
-          button.enable && (
+          button?.enable && (
             <div class="pt-4">
               <a class="btn btn-primary shadow-lg hover:shadow-md transition-all" href={button.link}>
                 {button.label}
