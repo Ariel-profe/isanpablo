@@ -323,33 +323,55 @@ const sportsSchoolCollection = defineCollection({
 
     // Hero Section
     hero: z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      description: z.string(),
       images: z.array(z.string())
     }),
-    // Key Features Section
-    features: z.object({
+    // Icons are react-icons/tb names (e.g. "TbBallFootball")
+    disciplines: z.object({
       title: z.string(),
       description: z.string(),
-      features_list: z.array(
-        z.object({
-          title: z.string(),
-          description: z.string(),
-          icon: z.string(),
-        })
-      )
-    }),
-    // Facilities
-    facilities: z.object({
-      title: z.string(),
-      description: z.string(),
+      note: z.string().optional(),
       list: z.array(
         z.object({
           name: z.string(),
           icon: z.string(),
+          age: z.string(),
+          days: z.string(),
+          time: z.string(),
         })
       )
+    }),
+    schedule: z.object({
+      title: z.string(),
+      description: z.string(),
+      image: z.string(),
+      highlights: z.array(z.string()),
+    }),
+    competition: z.object({
+      title: z.string(),
+      description: z.string(),
+      closing: z.string().optional(),
+      list: z.array(
+        z.object({
+          name: z.string(),
+          icon: z.string(),
+          description: z.string(),
+        })
+      )
+    }),
+    values: z.object({
+      title: z.string(),
+      description: z.string(),
+      list: z.array(
+        z.object({
+          label: z.string(),
+          icon: z.string(),
+        })
+      )
+    }),
+    safety: z.object({
+      title: z.string(),
+      description: z.string(),
+      list: z.array(z.string()),
     }),
     // CTA Section
     cta: z.object({

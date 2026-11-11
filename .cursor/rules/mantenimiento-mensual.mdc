@@ -18,9 +18,13 @@ Es el plan de mantenimiento de menor costo: cada mes se hacen 2 a 4 mejoras visi
 - Nosotros: línea de tiempo "Nuestra historia" (1964 / 1987 / Hoy), datos tomados de `public/images/global/historia.png`.
 - Nueva página `/contact` (Contacto e Inscripciones) con mapa; "Contacto" en el menú y botón "Inscripciones" del header directo al formulario de vacante.
 
+**Noviembre 2026**
+- Escuela Deportiva (`/levels/sports-school`) reestructurada con el texto del cliente: disciplinas con edad y horario (datos del cronograma 2026), sección "Cronograma 2026" con la imagen ampliable/descargable (`public/images/deportiva/cronograma-deportes.jpeg`), competencia (futsal/básquet), valores y "espacio seguro". Emojis reemplazados por íconos Tabler (`Tb*`).
+- Slider de fotos (`src/layouts/components/Slider.astro`): el contenedor toma la proporción 20:7 de las fotos en vez de una altura fija de 400px (en mobile quedaba un hueco enorme). El banner de la home usa `variant="logos"` y mantiene la caja fija. Las fotos nuevas para sliders deben ser 1000×350 (20:7).
+
 ## Pendiente (en orden sugerido)
 
-- **Noviembre:** reemplazar emojis de las páginas de niveles (`src/content/{initial,primary,secondary,sports-school}`) por íconos `Fi*` como en la home; mejorar estilo de los botones "Ir a Aulica / Handing" y "Nota PDF" en `src/pages/administration.astro` (label hardcodeado).
+- **Noviembre (resto):** reemplazar emojis de las páginas de inicial, primaria y secundaria (`src/content/{initial,primary,secondary}`) por íconos; mejorar estilo de los botones "Ir a Aulica / Handing" y "Nota PDF" en `src/pages/administration.astro` (label hardcodeado).
 - **Diciembre:** revisar con el cliente textos genéricos de la home ("excelencia internacional", "certificaciones reconocidas internacionalmente", "alianzas estratégicas") y reemplazar fotos de stock (`academic-formation.jpg`, `academic-skills.jpg`, etc.) por fotos reales.
 - **Enero:** frase propia para el H1 del banner y fotos de alumnos/edificio para el slider del banner.
 - **Febrero:** sección simple de novedades (inicio de ciclo lectivo).
@@ -35,6 +39,7 @@ Es el plan de mantenimiento de menor costo: cada mes se hacen 2 a 4 mejoras visi
 
 - Safari iOS tiene la barra de navegación abajo: no usar `100vh`/`h-screen` para alturas de pantalla. Usar `svh` para secciones (ej. `.banner` en `src/styles/safe.css`) y `dvh` para overlays/menús; el menú mobile tiene `max-height` con `dvh` y scroll interno porque el body se bloquea al abrirlo.
 
+- Escuela Deportiva: los horarios de cada tarjeta (`src/content/sports-school/-index.md`, campos `days`/`time`) salen de la imagen del cronograma; al recibir el cronograma de un año nuevo, actualizar ambos. Los íconos son nombres de `react-icons/tb`.
 - El link del formulario de vacante está en `src/content/contact/-index.md` (lo usan la página de contacto y el botón del header) y en `src/content/downloads/-index.md`: actualizar ambos al cambiar el año.
 - El dev server de Astro a veces no resincroniza todo el markdown tras varias ediciones seguidas; volver a guardar el archivo lo soluciona.
 - Al terminar cada mes, mover lo realizado a "Hecho" y actualizar los pendientes.

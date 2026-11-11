@@ -8,7 +8,14 @@ import {
 import { Image } from "astro:assets";
 import type { SwiperOptions } from "swiper/types";
 
-const { list } = Astro.props;
+type Props = {
+  list: string[];
+  // "gallery" assumes 20:7 photos (1000x350); "logos" keeps a fixed-height box with contained images
+  variant?: "gallery" | "logos";
+};
+
+const { list, variant = "gallery" } = Astro.props;
+const isLogos = variant === "logos";
 
 const swiperOptions: SwiperOptions = {
   pagination: {
@@ -27,15 +34,19 @@ const swiperOptions: SwiperOptions = {
 ---
 
 <div class="cursor-grab">
-  <Swiper options={swiperOptions} class="reviews-carousel relative">
+  <Swiper options={swiperOptions} class={isLogos ? "reviews-carousel relative" : "relative pb-8!"}>
     <SwiperWrapper>
       {
         list.map((item: string) => (
-          <SwiperSlide class="swiper-slide-fixed-height">
+          <SwiperSlide class={isLogos ? "swiper-slide-fixed-height" : ""}>
             <Image
               src={item}
               alt={item}
-              class="w-full h-87.5 rounded-3xl object-contain"
+              class={
+                isLogos
+                  ? "w-full h-87.5 rounded-3xl object-contain"
+                  : "w-full h-auto aspect-[20/7] rounded-2xl object-cover"
+              }
               width={1000}
               height={350}
             />

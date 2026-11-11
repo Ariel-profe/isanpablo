@@ -6,22 +6,30 @@ import Base from "@/layouts/Base.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 import { markdownify } from "@/lib/utils/textConverter";
+import type { IconType } from "react-icons";
+import * as TbIcons from "react-icons/tb";
 
 const sportsSchool = (await getEntry(
   "sports-school",
   "-index",
 )) as CollectionEntry<"sports-school">;
 const { data } = sportsSchool;
+const { disciplines, schedule, competition, values, safety, cta } = data;
 const page_data = {
   ...data,
   content: sportsSchool.body,
 };
+
+const getIcon = (name: string): IconType =>
+  (TbIcons as Record<string, IconType>)[name] ?? TbIcons.TbCircleCheck;
+const { TbCircleCheck, TbClock, TbDownload, TbInfoCircle, TbTrophy, TbZoomIn } = TbIcons;
 ---
 
 <Base
   title={data.meta_title}
   meta_title={data.meta_title}
   description={data.description}
+  image={data.image}
 >
   <Shape />
   <section class="page-hero pt-16">
@@ -31,7 +39,7 @@ const page_data = {
       </div>
     </div>
   </section>
-  <!-- Hero Section -->
+
   <section class="section pb-10">
     <div class="container max-w-6xl mx-auto">
       <div class="rounded-3xl border border-slate-200 bg-white/70 p-3 shadow-sm">
@@ -40,82 +48,212 @@ const page_data = {
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="section py-10 bg-theme-light/50">
-    <div class="container max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="mb-4 text-4xl font-bold">{data.features.title}</h2>
-        <p class="text-xl text-text max-w-2xl mx-auto">
-          {data.features.description}
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {
-          data.features.features_list.map((feature: any) => (
-            <div class="p-8 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all">
-              <div class="text-5xl mb-4">{feature.icon}</div>
-              <h3 class="mb-3 text-xl font-bold">{feature.title}</h3>
-              <p class="text-text">{feature.description}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- Facilities Section -->
   <section class="section py-10">
     <div class="container max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="mb-4 text-4xl font-bold">{data.facilities.title}</h2>
-        <p class="text-xl text-text max-w-2xl mx-auto">
-          {data.facilities.description}
-        </p>
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="mb-4 text-4xl font-bold">{disciplines.title}</h2>
+        <p class="text-lg leading-relaxed text-text">{disciplines.description}</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {
-          data.facilities.list.map((facility: any) => (
-            <div class="p-3 bg-white rounded-xl shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all">
-              <div class="text-5xl mb-4">{facility.icon}</div>
-              <h3 class="mb-3 text-xl font-bold">{facility.name}</h3>
-              <p class="text-text">{facility.description}</p>
-            </div>
-          ))
+          disciplines.list.map((discipline) => {
+            const Icon = getIcon(discipline.icon);
+            return (
+              <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
+                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <h3 class="mt-5 text-lg font-semibold text-dark">{discipline.name}</h3>
+                <p class="mt-1 text-sm font-medium text-primary">{discipline.age}</p>
+                <div class="mt-auto pt-4">
+                  <p class="flex items-start gap-2 border-t border-border pt-4 text-sm text-text">
+                    <TbClock className="mt-0.5 h-4 w-4 shrink-0" />
+                    <span>
+                      <span class="block font-medium text-text-dark">{discipline.days}</span>
+                      {discipline.time}
+                    </span>
+                  </p>
+                </div>
+              </article>
+            );
+          })
         }
       </div>
-      <p class="mt-5 text-center text-text">Recordá que no hace falta ser alumno del colegio para poder participar.</p>
+      {
+        disciplines.note && (
+          <p class="mx-auto mt-10 flex w-fit max-w-full items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
+            <TbInfoCircle className="h-4 w-4 shrink-0" />
+            {disciplines.note}
+          </p>
+        )
+      }
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <section id="cronograma" class="section scroll-mt-20 bg-theme-light/50">
+    <div class="container max-w-6xl mx-auto">
+      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <h2 class="mb-4 text-4xl font-bold">{schedule.title}</h2>
+          <p class="text-lg text-text">{schedule.description}</p>
+          <ul class="mt-6 space-y-3">
+            {
+              schedule.highlights.map((highlight) => (
+                <li class="flex items-start gap-3 text-text-dark">
+                  <TbCircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  {highlight}
+                </li>
+              ))
+            }
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              class="btn btn-primary inline-flex items-center gap-2"
+              href={schedule.image}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TbZoomIn className="h-5 w-5" />
+              Ver en tamaño completo
+            </a>
+            <a
+              class="btn btn-outline-primary inline-flex items-center gap-2"
+              href={schedule.image}
+              download="cronograma-escuela-deportiva-san-pablo.jpeg"
+            >
+              <TbDownload className="h-5 w-5" />
+              Descargar
+            </a>
+          </div>
+        </div>
+        <a
+          href={schedule.image}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative mx-auto block w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+          aria-label={`${schedule.title}: ver imagen en tamaño completo`}
+        >
+          <img
+            src={schedule.image}
+            alt={`${schedule.title} de la Escuela Deportiva San Pablo: categorías, días y horarios de cada disciplina`}
+            width="1131"
+            height="1600"
+            loading="lazy"
+            decoding="async"
+            class="h-auto w-full rounded-xl"
+          />
+          <span class="absolute bottom-5 right-5 inline-flex items-center gap-1.5 rounded-full bg-dark/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+            <TbZoomIn className="h-4 w-4" />
+            Ampliar
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container max-w-6xl mx-auto">
+      <div class="grid items-center gap-10 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <span class="bg-gradient flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-md">
+            <TbTrophy className="h-7 w-7" />
+          </span>
+          <h2 class="mt-6 mb-4 text-4xl font-bold">{competition.title}</h2>
+          <p class="text-lg leading-relaxed text-text">{competition.description}</p>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="grid gap-6 sm:grid-cols-2">
+            {
+              competition.list.map((item) => {
+                const Icon = getIcon(item.icon);
+                return (
+                  <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <h3 class="mt-5 text-xl font-semibold text-dark">{item.name}</h3>
+                    <p class="mt-2 text-text">{item.description}</p>
+                  </article>
+                );
+              })
+            }
+          </div>
+          {
+            competition.closing && (
+              <p class="mt-6 font-medium text-text-dark">{competition.closing}</p>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-theme-light/50">
+    <div class="container max-w-6xl mx-auto">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm md:p-10">
+          <h2 class="mb-4 text-3xl font-bold">{values.title}</h2>
+          <p class="text-text">{values.description}</p>
+          <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+            {
+              values.list.map((value) => {
+                const Icon = getIcon(value.icon);
+                return (
+                  <li class="flex items-center gap-3 rounded-xl bg-primary/5 px-4 py-3 font-medium text-dark">
+                    <Icon className="h-5 w-5 shrink-0 text-primary" />
+                    {value.label}
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+        <div class="bg-gradient rounded-3xl p-7 text-white shadow-md md:p-10">
+          <h2 class="mb-4 text-3xl font-bold text-white">{safety.title}</h2>
+          <p class="text-white/90">{safety.description}</p>
+          <ul class="mt-8 space-y-4">
+            {
+              safety.list.map((item) => (
+                <li class="flex items-start gap-3">
+                  <TbCircleCheck className="mt-0.5 h-5 w-5 shrink-0" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="px-3 py-10">
     <div class="container">
       <div class="bg-gradient row justify-center rounded-b-[80px] rounded-t-[20px] px-3 py-14">
         <div class="lg:col-11">
-          <div class="row">
+          <div class="row items-center">
             <div class="lg:col-7">
-              <h2
-                class="h1 text-white"
-                set:html={markdownify(data.cta.title)}
-              />
-              <div class="flex items-center gap-2">
+              <h2 class="h1 text-white" set:html={markdownify(cta.title)} />
+              <div class="mt-2 flex flex-wrap items-center gap-3">
                 {
-                  data.cta.buttons.map((button: any) => (
-                    <a class="btn btn-white mt-2" href={button.link} target="_blank">
-                      {button.label}
-                    </a>
-                  ))
+                  cta.buttons.map(
+                    (button) =>
+                      button.enable && (
+                        <a
+                          class="btn btn-white"
+                          href={button.link}
+                          {...(button.link.startsWith("http")
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                        >
+                          {button.label}
+                        </a>
+                      ),
+                  )
                 }
               </div>
             </div>
             <div class="mt-8 lg:col-5 lg:mt-0">
-              <p class="text-white text-justify">
-                {
-                  data.cta.description && (
-                    <span set:html={markdownify(data.cta.description)} />
-                  )
-                }
-              </p>
+              <p class="text-white" set:html={markdownify(cta.description)} />
             </div>
           </div>
         </div>
